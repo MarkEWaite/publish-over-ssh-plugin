@@ -261,8 +261,19 @@ public class BapSshHostConfiguration extends BPHostConfiguration<BapSshClient, B
         return super.readResolve();
     }
 
+    @Override
+    public BapSshCommonConfiguration getCommonConfig() {
+        return super.getCommonConfig();
+    }
+
+    @Override
+    public void setCommonConfig(final BapSshCommonConfiguration commonConfig) {
+        super.setCommonConfig(commonConfig);
+    }
+
     public boolean isEffectiveDisableExec() {
-        return getCommonConfig().isDisableAllExec() || disableExec;
+        final BapSshCommonConfiguration commonConfig = getCommonConfig();
+        return (commonConfig != null && commonConfig.isDisableAllExec()) || disableExec;
     }
 
     private BapSshKeyInfo getEffectiveKeyInfo(final BPBuildInfo buildInfo) {
