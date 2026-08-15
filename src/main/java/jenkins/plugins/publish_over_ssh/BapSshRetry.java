@@ -24,6 +24,7 @@
 
 package jenkins.plugins.publish_over_ssh;
 
+import org.kohsuke.accmod.restrictions.suppressions.SuppressRestrictedWarnings;
 import hudson.Extension;
 import hudson.model.Describable;
 import hudson.model.Descriptor;
@@ -81,6 +82,7 @@ public class BapSshRetry extends Retry implements Describable<BapSshRetry> {
             return FormValidation.validatePositiveInteger(value);
         }
 
+        @SuppressRestrictedWarnings(jenkins.plugins.publish_over.view_defaults.Retry.Messages.class)
         public jenkins.plugins.publish_over.view_defaults.Retry.Messages getCommonFieldNames() {
             return new jenkins.plugins.publish_over.view_defaults.Retry.Messages();
         }

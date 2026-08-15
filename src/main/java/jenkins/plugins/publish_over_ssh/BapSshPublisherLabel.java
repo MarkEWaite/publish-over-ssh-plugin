@@ -24,6 +24,7 @@
 
 package jenkins.plugins.publish_over_ssh;
 
+import org.kohsuke.accmod.restrictions.suppressions.SuppressRestrictedWarnings;
 import hudson.Extension;
 import hudson.model.Describable;
 import hudson.model.Descriptor;
@@ -71,6 +72,7 @@ public class BapSshPublisherLabel extends PublisherLabel implements Describable<
             return Messages.publisherLabel_descriptor_displayName();
         }
 
+        @SuppressRestrictedWarnings(jenkins.plugins.publish_over.view_defaults.PublisherLabel.Messages.class)
         public jenkins.plugins.publish_over.view_defaults.PublisherLabel.Messages getCommonFieldNames() {
             return new jenkins.plugins.publish_over.view_defaults.PublisherLabel.Messages();
         }

@@ -24,6 +24,7 @@
 
 package jenkins.plugins.publish_over_ssh.descriptor;
 
+import org.kohsuke.accmod.restrictions.suppressions.SuppressRestrictedWarnings;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -183,10 +184,12 @@ public class BapSshPublisherPluginDescriptor extends BuildStepDescriptor<Publish
         return Jenkins.getActiveInstance().getDescriptorByType(SshPluginDefaults.SshPluginDefaultsDescriptor.class);
     }
 
+    @SuppressRestrictedWarnings(jenkins.plugins.publish_over.view_defaults.BPInstanceConfig.Messages.class)
     public jenkins.plugins.publish_over.view_defaults.BPInstanceConfig.Messages getCommonFieldNames() {
         return new jenkins.plugins.publish_over.view_defaults.BPInstanceConfig.Messages();
     }
 
+    @SuppressRestrictedWarnings(jenkins.plugins.publish_over.view_defaults.manage_jenkins.Messages.class)
     public jenkins.plugins.publish_over.view_defaults.manage_jenkins.Messages getCommonManageMessages() {
         return new jenkins.plugins.publish_over.view_defaults.manage_jenkins.Messages();
     }
